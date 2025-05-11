@@ -43,53 +43,77 @@ Never waste time crafting `.gitignore` files again! This smart tool automaticall
 - ➕ Adds useful custom patterns
 - 🛠️ VS Code Task Runner integration
 
-## Installation
+## 💾 Quick Setup
 
-1. Download the script:
+1. **Install the Script**
    ```bash
+   # Download the script
    curl -o ~/bin/generate-gitignore.sh https://raw.githubusercontent.com/yourusername/auto_gitignore_generation/main/generate-gitignore.sh
-   ```
-
-2. Make it executable:
-   ```bash
+   
+   # Make it executable
    chmod +x ~/bin/generate-gitignore.sh
    ```
 
-## Usage
+2. **Configure Your IDE**
 
-### Command Line
-Navigate to your project directory and run:
-```bash
-~/bin/generate-gitignore.sh
-```
+   ### VS Code Users
 
-### VS Code Integration
+   1. Open Command Palette (`Cmd+Shift+P` on Mac, `Ctrl+Shift+P` on Windows/Linux)
+   2. Type "Tasks: Open User Tasks" and select it
+   3. Add this configuration to `tasks.json`:
 
-1. Open your project in VS Code
-2. Create or open `.vscode/tasks.json`
-3. Add the following configuration:
-```json
-{
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "Generate Gitignore",
-            "type": "shell",
-            "command": "~/bin/generate-gitignore.sh",
-            "problemMatcher": [],
-            "presentation": {
-                "reveal": "always",
-                "panel": "new"
-            }
-        }
-    ]
-}
-```
+   ```json
+   {
+       "version": "2.0.0",
+       "tasks": [
+           {
+               "label": "Generate Gitignore",
+               "type": "shell",
+               "command": "~/bin/generate-gitignore.sh",
+               "problemMatcher": [],
+               "group": {
+                   "kind": "build",
+                   "isDefault": true
+               }
+           }
+       ]
+   }
+   ```
 
-4. Run the task:
-   - Press `Cmd+Shift+P` (Mac) or `Ctrl+Shift+P` (Windows/Linux)
-   - Type "Tasks: Run Task"
-   - Select "Generate Gitignore"
+   ### Cursor IDE Users
+
+   1. Open Settings (`Cmd+,` on Mac, `Ctrl+,` on Windows/Linux)
+   2. Search for "Task Runner"
+   3. Click "Edit in settings.json"
+   4. Add this configuration:
+
+   ```json
+   {
+       "taskrunner.tasks": {
+           "Generate Gitignore": {
+               "command": "~/bin/generate-gitignore.sh",
+               "type": "shell"
+           }
+       }
+   }
+   ```
+
+## 🔧 Usage
+
+### VS Code
+
+1. Press `Cmd+Shift+B` (Mac) or `Ctrl+Shift+B` (Windows/Linux)
+2. The script will automatically detect your project type and generate the perfect `.gitignore`
+
+### Cursor IDE
+
+1. Press `Cmd+Shift+P` (Mac) or `Ctrl+Shift+P` (Windows/Linux)
+2. Type "Task Runner: Run Task"
+3. Select "Generate Gitignore"
+
+### Terminal
+
+Run `~/bin/generate-gitignore.sh` in your terminal.
 
 ## Supported Project Types
 
