@@ -5,7 +5,33 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Powered by gitignore.io](https://img.shields.io/badge/Powered%20by-gitignore.io-blue.svg)](https://www.toptal.com/developers/gitignore)
 
-A smart shell script that automatically generates appropriate `.gitignore` files for your projects. It detects your project type and fetches the most suitable gitignore template from [gitignore.io](https://www.toptal.com/developers/gitignore).
+> 🎯 **Perfect Gitignore Files in One Click!**
+
+Never waste time crafting `.gitignore` files again! This smart tool automatically detects your project type and generates the perfect `.gitignore` file instantly. Whether you're working with Node.js, Python, Java, or any other framework - we've got you covered!
+
+## 📸 See it in Action
+
+<div align="center">
+
+### 💻 CLI Usage
+
+![CLI Demo](assets/cli-demo.gif)
+*Auto-detects project type and generates perfect gitignore in seconds!*
+
+### ✨ VS Code Integration
+
+![VS Code Demo](assets/vscode-demo.gif)
+*One-click gitignore generation right from your IDE!*
+
+</div>
+
+## ✨ One Command = Perfect Gitignore
+
+```bash
+~/bin/generate-gitignore.sh
+```
+
+## 🎮 Use in VS Code
 
 </div>
 
@@ -105,7 +131,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Author
 
-**Mohammad Daftab** - *Initial work*
+**Md Aftab** - *Initial work*
 
 ---
 
