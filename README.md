@@ -47,8 +47,11 @@ Never waste time crafting `.gitignore` files again! This smart tool automaticall
 
 1. **Install the Script**
    ```bash
+   # Create bin directory if it doesn't exist
+   mkdir -p ~/bin
+
    # Download the script
-   curl -o ~/bin/generate-gitignore.sh https://raw.githubusercontent.com/yourusername/auto_gitignore_generation/main/generate-gitignore.sh
+   curl -o ~/bin/generate-gitignore.sh https://raw.githubusercontent.com/Mdaftab/auto_gitignore_generation/main/generate-gitignore.sh
    
    # Make it executable
    chmod +x ~/bin/generate-gitignore.sh
