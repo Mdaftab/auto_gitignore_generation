@@ -1,165 +1,59 @@
-<div align="center">
+# Auto Gitignore Generation
 
-# 🚀 Auto Gitignore Generation
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-> 🎯 **Perfect Gitignore Files in One Click!**
-
-Never waste time crafting `.gitignore` files again! This smart tool automatically detects your project type and generates the perfect `.gitignore` file instantly. Whether you're working with Node.js, Python, Java, or any other framework - we've got you covered!
-
-## 📸 See it in Action
-
-<div align="center">
-
-### 💻 CLI Usage
-
-![CLI Demo](assets/cli-demo.gif)
-*Auto-detects project type and generates perfect gitignore in seconds!*
-
-### ✨ VS Code Integration
-
-![VS Code Demo](assets/vscode-demo.gif)
-*One-click gitignore generation right from your IDE!*
-
-</div>
+This tool automatically creates a `.gitignore` file for your project. It detects your project type and adds common files and folders that should be ignored by Git.
 
 ## Features
 
-- 🔍 Automatic project type detection
-- 🎯 Supports multiple project types (Node.js, Python, Ruby, Java, Go, PHP, Rust, Swift, Android, Flutter, C++, and more)
-- 🔄 Backs up existing `.gitignore` files
-- ➕ Adds useful custom patterns
-- 🛠️ VS Code Task Runner integration
+*   **Automatic Detection:** Detects your project type (like Node.js, Python, Java, etc.).
+*   **Wide Support:** Works with many programming languages and frameworks.
+*   **Backup:** Saves your old `.gitignore` file before creating a new one.
+*   **Custom Patterns:** Adds useful patterns like editor files (`.vscode/`, `.idea/`) and log files.
+*   **IDE Integration:** Can be used with VS Code and Cursor IDE.
 
-## 💾 Quick Setup
-
-1. **Install the Script**
-   ```bash
-   # Create bin directory if it doesn't exist
-   mkdir -p ~/bin
-
-   # Download the script
-   curl -o ~/bin/generate-gitignore.sh https://raw.githubusercontent.com/Mdaftab/auto_gitignore_generation/main/generate-gitignore.sh
-   
-   # Make it executable
-   chmod +x ~/bin/generate-gitignore.sh
-   ```
-
-2. **Setup Your IDE**
-
-   ### VS Code Users
-
-   1. Install Task Runner:
-      - Open VS Code
-      - Go to Extensions (Cmd+Shift+X on Mac, Ctrl+Shift+X on Windows/Linux)
-      - Search for "Task Runner"
-      - Install "Task Runner" by sana.task-runner
-
-   2. Configure Task Runner:
-      - Open Command Palette (`Cmd+Shift+P` on Mac, `Ctrl+Shift+P` on Windows/Linux)
-      - Type "Tasks: Open User Tasks" and select it
-      - Add this configuration to `tasks.json`:
-
-   ```json
-   {
-       "version": "2.0.0",
-       "tasks": [
-           {
-               "label": "Generate Gitignore",
-               "type": "shell",
-               "command": "~/bin/generate-gitignore.sh",
-               "problemMatcher": [],
-               "group": {
-                   "kind": "build",
-                   "isDefault": true
-               }
-           }
-       ]
-   }
-   ```
-
-   ### Cursor IDE Users
-
-   1. Install Task Runner:
-      - Open Cursor IDE
-      - Open Extensions panel (Cmd+Shift+X on Mac, Ctrl+Shift+X on Windows/Linux)
-      - Search for "Task Runner"
-      - Install "Task Runner" by sana.task-runner
-
-   2. Configure Task Runner:
-      - Open Settings (`Cmd+,` on Mac, `Ctrl+,` on Windows/Linux)
-      - Search for "Task Runner"
-      - Click "Edit in settings.json"
-      - Add this configuration:
-
-   ```json
-   {
-       "taskrunner.tasks": {
-           "Generate Gitignore": {
-               "command": "~/bin/generate-gitignore.sh",
-               "type": "shell"
-           }
-       }
-   }
-   ```
-
-## 🔧 Usage
-
-### VS Code / Cursor IDE
-
-1. Press `Cmd+Shift+B` (Mac) or `Ctrl+Shift+B` (Windows/Linux)
-2. Select "Generate Gitignore" from the task list
-3. The script will automatically detect your project type and generate the perfect `.gitignore`
+## How to Use
 
 ### Terminal
 
-Run `~/bin/generate-gitignore.sh` in your terminal.
+1.  **Install the Script:**
+    ```bash
+    mkdir -p ~/bin
+    curl -o ~/bin/generate-gitignore.sh https://raw.githubusercontent.com/Mdaftab/auto_gitignore_generation/main/generate-gitignore.sh
+    chmod +x ~/bin/generate-gitignore.sh
+    ```
+2.  **Run the Script:**
+    ```bash
+    ~/bin/generate-gitignore.sh
+    ```
+
+### VS Code / Cursor IDE
+
+1.  **Install Task Runner:** Search for "Task Runner" in the extensions marketplace and install it.
+2.  **Configure Task Runner:** Add a task to run the `~/bin/generate-gitignore.sh` script. (See the original README for detailed configuration steps if needed, but the script installation is the main part).
+3.  **Run the Task:** Use the IDE's command palette or task runner shortcut to run the "Generate Gitignore" task.
 
 ## Supported Project Types
 
-- Node.js (package.json)
-- Python (requirements.txt, setup.py, .venv, Pipfile)
-- Ruby (Gemfile)
-- Java (pom.xml, build.gradle)
-- Go (go.mod)
-- PHP (composer.json)
-- Rust (Cargo.toml)
-- Swift (Podfile, .xcodeproj)
-- Android (AndroidManifest.xml)
-- Flutter (pubspec.yaml with ios/android directories)
-- Dart (pubspec.yaml)
-- C++ (CMakeLists.txt, Makefile with src/include)
-- Elixir (mix.exs)
-- Crystal (shard.yml)
-- Docker (Dockerfile, docker-compose.yml)
-- Terraform (.terraform, .tf files)
+The script looks for specific files to detect your project type, such as:
 
-If no specific project type is detected, it generates a basic gitignore with common patterns.
+*   `package.json` (Node.js)
+*   `requirements.txt`, `setup.py`, `.venv`, `Pipfile` (Python)
+*   `Gemfile` (Ruby)
+*   `pom.xml`, `build.gradle` (Java)
+*   `go.mod` (Go)
+*   `composer.json` (PHP)
+*   `Cargo.toml` (Rust)
+*   And many more...
 
-## Features
-
-- Automatically detects project type based on files and directory structure
-- Fetches appropriate templates from gitignore.io
-- Includes OS-specific patterns (macOS, Linux, Windows)
-- Adds common custom patterns (.DS_Store, .idea/, .vscode/, logs, etc.)
-- Backs up existing .gitignore files before overwriting
+If no specific type is found, it creates a basic `.gitignore`.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is under the MIT License. See the `LICENSE` file for details.
 
-## Acknowledgments
+## Credits
 
-- [gitignore.io](https://www.toptal.com/developers/gitignore) - Provides the API for fetching up-to-date gitignore templates
-- [VS Code Task Runner](https://code.visualstudio.com/docs/editor/tasks) - For seamless IDE integration
+Uses the gitignore templates from [gitignore.io](https://www.toptal.com/developers/gitignore).
 
 ## Author
 
-**Md Aftab**
-
----
-
-<div align="center">
-Made with ❤️ for developers who love clean repositories
-</div>
+Md Aftab
