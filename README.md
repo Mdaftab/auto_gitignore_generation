@@ -1,4 +1,6 @@
-# Auto Gitignore Generation
+# 🚀 Auto Gitignore Generation
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 This tool automatically creates a `.gitignore` file for your project. It detects your project type and adds common files and folders that should be ignored by Git.
 
@@ -9,6 +11,16 @@ This tool automatically creates a `.gitignore` file for your project. It detects
 *   **Backup:** Saves your old `.gitignore` file before creating a new one.
 *   **Custom Patterns:** Adds useful patterns like editor files (`.vscode/`, `.idea/`) and log files.
 *   **IDE Integration:** Can be used with VS Code and Cursor IDE.
+
+## See it in Action
+
+### CLI Usage
+
+![CLI Demo](assets/cli-demo.gif)
+
+### VS Code Integration
+
+![VS Code Demo](assets/vscode-demo.gif)
 
 ## How to Use
 
